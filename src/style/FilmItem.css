@@ -1,0 +1,18 @@
+.filmItem {
+  max-width: 20%;
+  margin: 20px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(20, 10, 10, 0.4);
+  transition: 0.3s;
+}
+
+.filmItem img {
+  max-width: 50%;
+}
+
+.filmItem:hover {
+  cursor: pointer;
+  box-shadow: none;
+}
