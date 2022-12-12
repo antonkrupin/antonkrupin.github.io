@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { current } from "@reduxjs/toolkit";
 
 export const fetchFilms = createAsyncThunk(
   'films/fetchFilms',
@@ -24,8 +25,21 @@ const filmsSlice = createSlice({
     error: null,
   },
   reducers: {
-    changeFilm: (state, action) => {
-      state.films = action.payload;
+    deleteFilm: (state, action) => {
+      let index;
+      state.films.forEach((film, ind) => {
+        if (film.kinopoiskId === action.payload) {
+          index = ind;
+        }
+      });
+      state.films.splice(index, 1);
+    },
+    likeFilm: (state, action) => {
+      state.films.forEach((film, ind) => {
+        if (film.kinopoiskId === action.payload) {
+          film['like'] = !film['like'];
+        }
+      });
     }
   },
   extraReducers: {
@@ -45,7 +59,8 @@ const filmsSlice = createSlice({
 });
 
 export const {
-  changeFilm,
+  likeFilm,
+  deleteFilm,
 } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
