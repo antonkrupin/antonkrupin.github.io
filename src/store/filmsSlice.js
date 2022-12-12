@@ -6,10 +6,10 @@ export const fetchFilms = createAsyncThunk(
   'films/fetchFilms',
   async(_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres?year=2021&month=FEBRUARY', { headers: {
+      const response = await axios.get('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres', { headers: {
         'X-API-KEY': '72c61891-4272-4d36-8bc2-94c6a4d5a01e',
         'Content-Type': 'application/json',
-    }});
+    }, params: {'year': '2021', 'month':'FEBRUARY'}});
     return response.data.items;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -26,13 +26,12 @@ const filmsSlice = createSlice({
   },
   reducers: {
     deleteFilm: (state, action) => {
-      let index;
       state.films.forEach((film, ind) => {
         if (film.kinopoiskId === action.payload) {
-          index = ind;
+          state.films.splice(ind, 1);
         }
       });
-      state.films.splice(index, 1);
+      
     },
     likeFilm: (state, action) => {
       state.films.forEach((film, ind) => {
