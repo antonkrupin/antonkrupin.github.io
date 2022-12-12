@@ -1,4 +1,5 @@
 .filmItem {
+  position: relative;
   max-width: 20%;
   margin: 20px;
   padding: 10px;
@@ -15,4 +16,21 @@
 .filmItem:hover {
   cursor: pointer;
   box-shadow: none;
+}
+
+.bi-trash {
+  position: absolute;
+  z-index: 100000000;
+  right: 0;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.bi-trash:hover {
+  fill: #e02446;
+}
+
+.bi-heart-fill {
+  position: relative;
+  z-index: 10000;
 }
