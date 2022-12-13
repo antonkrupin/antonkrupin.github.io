@@ -50,6 +50,9 @@ const filmsSlice = createSlice({
     setFilter: (state) => {
       state.filter = !state.filter;
     },
+    setFetchStatus: (state) => {
+      state.fetchStatus = null;
+    },
   },
   extraReducers: {
     [fetchFilms.pending]: (state) => {
@@ -73,6 +76,7 @@ export const {
   setSearchParams,
   clearFilmsList,
   setFilter,
+  setFetchStatus,
 } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
