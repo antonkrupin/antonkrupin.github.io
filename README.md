@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Application for fethcing films premiers on kinopoisk.ru
 
-This project was bootstrapped with [Create React App](https://kinopoiskapiunofficial.tech/).
+This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
 
 ## Available Scripts
 
