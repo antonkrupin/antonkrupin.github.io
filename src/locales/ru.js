@@ -8,6 +8,7 @@ export default {
       fetchFilmsError: 'Выберите месяц и год, для загрузки фильмов',
       filterLikeFilms: 'Понравившиеся',
       filterAllFilms: 'Все фильмы',
+      emptyList: 'Список пуст',
     },
     filmItem: {
       year: 'Год выхода:',
