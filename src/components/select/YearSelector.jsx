@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 
 import i18n from '../../asserts/i18next';
 
-import { setSearchParams } from '../../store/filmsSlice';
+import { setSearchParams, setFetchStatus } from '../../store/filmsSlice';
 
 const YearSelector = () => {
   const dispatch = useDispatch();
 
   const selectHandler = (e) => {
+    dispatch(setFetchStatus());
     dispatch(setSearchParams({ paramName: 'year', value: e.target.value }));
   };
 
@@ -17,7 +18,7 @@ const YearSelector = () => {
     <select
       onChange={(e) => selectHandler(e)}
       className="form-select m-2"
-      aria-label="Year Selector"
+      aria-label={i18n.t('yearSelector.ariaLabel')}
     >
       <option>{i18n.t('yearSelector.default')}</option>
       <option value="2022">2022</option>

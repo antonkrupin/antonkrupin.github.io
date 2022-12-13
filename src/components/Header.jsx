@@ -9,6 +9,7 @@ import {
   clearFilmsList,
   setFilter,
 } from '../store/filmsSlice';
+import { selectFetchStatus, selectQueryParams } from '../store/selectors';
 
 import MounthSelector from './select/MounthSelector';
 import YearSelector from './select/YearSelector';
@@ -16,11 +17,11 @@ import YearSelector from './select/YearSelector';
 const Header = () => {
   const dispatch = useDispatch();
 
-  const status = useSelector((state) => state.films.fetchStatus);
+  const status = useSelector(selectFetchStatus);
 
-  const params = useSelector((state) => state.films.params);
+  const params = useSelector(selectQueryParams);
 
-  const loadButtonClassName = (!params.year || !params.month) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
+  const loadButtonClassName = ((!params.year || !params.month) || status === 'resolved') ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
   const fetchFilmsHandler = () => {
     dispatch(clearFilmsList());

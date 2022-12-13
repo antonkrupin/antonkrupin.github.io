@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux';
 
 import i18n from '../../asserts/i18next';
 
-import { setSearchParams } from '../../store/filmsSlice';
+import { setSearchParams, setFetchStatus } from '../../store/filmsSlice';
 
 const MounthSelector = () => {
   const dispatch = useDispatch();
 
   const selectHandler = (e) => {
+    dispatch(setFetchStatus());
     dispatch(setSearchParams({ paramName: 'month', value: e.target.value }));
   };
 
@@ -17,7 +18,7 @@ const MounthSelector = () => {
     <select
       onChange={(e) => selectHandler(e)}
       className="form-select m-2"
-      aria-label="Mounth Selector"
+      aria-label={i18n.t('mounthSelector.ariaLabel')}
     >
       <option>{i18n.t('mounthSelector.default')}</option>
       <option value="JANUARY">{i18n.t('mounthSelector.mounth.january')}</option>
