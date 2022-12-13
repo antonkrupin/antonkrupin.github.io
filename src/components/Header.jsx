@@ -10,8 +10,8 @@ import {
   setFilter,
 } from '../store/filmsSlice';
 
-import MounthSelector from './selectors/MounthSelector';
-import YearSelector from './selectors/YearSelector';
+import MounthSelector from './select/MounthSelector';
+import YearSelector from './select/YearSelector';
 
 const Header = () => {
   const dispatch = useDispatch();
