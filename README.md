@@ -2,9 +2,9 @@
 
 This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
 
-## Available Scripts
+## To start use application:
 
-In the project directory, you can run:
+Clone repository
 
 ### `npm start`
 
