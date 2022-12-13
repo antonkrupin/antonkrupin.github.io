@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
+
+import i18n from '../asserts/i18next';
 
 import { fetchFilms } from '../store/filmsSlice';
 
@@ -12,7 +13,7 @@ const Header = () => {
   return (
     <>
       <div className="d-flex text-center justify-content-center flex-column">
-        <h2 className="text-primary">Список премьер фильмов.</h2>
+        <h2 className="text-primary">{i18n.t('ui.title')}</h2>
         { status === 'loading'
       && (
       <div className="d-flex align-items-center justify-content-center">
