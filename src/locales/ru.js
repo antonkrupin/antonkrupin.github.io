@@ -1,7 +1,7 @@
 export default {
   translation: {
     ui: {
-      title: 'Список премьер фильмов',
+      title: 'Список премьер фильмов на сайте hd.kinopoisk.ru',
       loading: 'Загрузка списка фильмов...',
       buttonLoad: 'Загрузить',
       noFilmsTitle: 'Для загрузки списка выберите месяц и год.',
@@ -30,9 +30,11 @@ export default {
         november: 'Ноябрь',
         december: 'Декабрь',
       },
+      ariaLabel: 'Mounth selector',
     },
     yearSelector: {
       default: 'Выберите год',
+      ariaLabel: 'Year selector',
     },
     errors: {
 
