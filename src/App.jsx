@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PremiersList from './PremiersList';
+import PremiersList from './components/PremiersList';
 
 import './App.css';
 
