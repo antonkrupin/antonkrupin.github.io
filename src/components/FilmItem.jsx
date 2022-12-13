@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
-import LikeIcon from './icons/LikeIcon';
-import TrashIcon from './icons/TrashIcon';
+import { LikeIcon, TrashIcon } from './Icons';
 
 import { deleteFilm, likeFilm } from '../store/filmsSlice';
 
