@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import i18n from '../../asserts/i18next';
+import i18n from '../asserts/i18next';
 
-import { setFetchStatus, setSearchParams } from '../../store/filmsSlice';
+import { setFetchStatus, setSearchParams } from '../store/filmsSlice';
 
 const SelectComponent = (props) => {
   const dispatch = useDispatch();

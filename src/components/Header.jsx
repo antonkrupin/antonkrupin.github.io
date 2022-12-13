@@ -11,7 +11,7 @@ import {
 } from '../store/filmsSlice';
 import { selectFetchStatus, selectQueryParams } from '../store/selectors';
 
-import SelectComponent from './select/SelectComponent';
+import SelectComponent from './SelectComponent';
 
 const Header = () => {
   const dispatch = useDispatch();
