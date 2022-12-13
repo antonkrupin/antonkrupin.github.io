@@ -37,3 +37,39 @@
   margin: 10px;
   transition: 0.3s;
 }
+
+@media (max-width: 575px) {
+  .filmItem {
+    max-width: 65%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .filmItem {
+    max-width: 40%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .filmItem {
+    max-width: 30%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .filmItem {
+    max-width: 30%;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .filmItem {
+    max-width: 30%;
+  }
+}
+@media (min-width: 1500px) and (max-width: 1699px) {
+  .filmItem {
+    max-width: 25%;
+  }
+}
+@media (min-width: 1700px) {
+  .filmItem {
+    max-width: 20%;
+  }
+}

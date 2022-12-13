@@ -15,6 +15,8 @@ import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../sto
 
 import SelectComponent from './SelectComponent';
 
+import '../style/Header.css';
+
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -43,7 +45,7 @@ const Header = () => {
       <div className="d-flex text-center justify-content-center flex-column">
         <h2 className="text-primary">{i18n.t('ui.title')}</h2>
       </div>
-      <div className="d-flex w-50 m-auto mt-5">
+      <div className="filters m-auto mt-5">
         <SelectComponent type="month" />
         <SelectComponent type="year" />
         <button
