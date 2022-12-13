@@ -1,3 +1,4 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/3a6aaf6ecbae5678d3d1/maintainability)](https://codeclimate.com/github/antonkrupin/antonkrupin.github.io/maintainability)
 # Application for fethcing films premiers on kinopoisk.ru
 
 This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
