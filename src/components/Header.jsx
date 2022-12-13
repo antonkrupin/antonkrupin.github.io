@@ -11,8 +11,6 @@ import {
 } from '../store/filmsSlice';
 import { selectFetchStatus, selectQueryParams } from '../store/selectors';
 
-// import MounthSelector from './select/MounthSelector';
-// import YearSelector from './select/YearSelector';
 import SelectComponent from './select/SelectComponent';
 
 const Header = () => {
