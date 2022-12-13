@@ -50,8 +50,8 @@ const filmsSlice = createSlice({
     setFilter: (state) => {
       state.filter = !state.filter;
     },
-    setFetchStatus: (state) => {
-      state.fetchStatus = null;
+    setFetchStatus: (state, action) => {
+      state.fetchStatus = action.payload;
     },
   },
   extraReducers: {

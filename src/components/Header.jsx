@@ -11,7 +11,7 @@ import {
   clearFilmsList,
   setFilter,
 } from '../store/filmsSlice';
-import { selectFetchStatus, selectQueryParams } from '../store/selectors';
+import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
 
 import SelectComponent from './SelectComponent';
 
@@ -21,6 +21,8 @@ const Header = () => {
   const status = useSelector(selectFetchStatus);
 
   const params = useSelector(selectQueryParams);
+
+  const filter = useSelector(selectActiveFilter);
 
   const loadButtonClassName = ((!params.year || !params.month) || (status === 'resolved' || status === 'loading')) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
@@ -56,7 +58,7 @@ const Header = () => {
           className={filterButtonClassName}
           type="button"
         >
-          {i18n.t('ui.filterLikeFilms')}
+          {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
         </button>
       </div>
       <InfoBlock />

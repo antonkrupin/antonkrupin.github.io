@@ -10,7 +10,7 @@ const SelectComponent = (props) => {
   const { type } = props;
 
   const selectHandler = (e) => {
-    dispatch(setFetchStatus());
+    dispatch(setFetchStatus('changeFilters'));
     dispatch(setSearchParams({ paramName: type, value: e.target.value }));
   };
 
