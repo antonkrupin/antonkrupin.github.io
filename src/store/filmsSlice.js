@@ -23,6 +23,7 @@ const filmsSlice = createSlice({
       year: null,
       month: null,
     },
+    filter: false,
   },
   reducers: {
     deleteFilm: (state, action) => {
@@ -46,6 +47,9 @@ const filmsSlice = createSlice({
     clearFilmsList: (state) => {
       state.films = [];
     },
+    setFilter: (state) => {
+      state.filter = !state.filter;
+    },
   },
   extraReducers: {
     [fetchFilms.pending]: (state) => {
@@ -68,6 +72,7 @@ export const {
   deleteFilm,
   setSearchParams,
   clearFilmsList,
+  setFilter,
 } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
