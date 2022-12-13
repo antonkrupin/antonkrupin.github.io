@@ -31,6 +31,9 @@
 }
 
 .bi-heart-fill {
-  position: relative;
+  position: absolute;
   z-index: 10000;
+	left: 0;
+  margin: 10px;
+  transition: 0.3s;
 }
