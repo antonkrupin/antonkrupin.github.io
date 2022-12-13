@@ -6,6 +6,8 @@ export default {
       buttonLoad: 'Загрузить',
       noFilmsTitle: 'Для загрузки списка выберите месяц и год.',
       fetchFilmsError: 'Выберите месяц и год, для загрузки фильмов',
+      filterLikeFilms: 'Понравившиеся',
+      filterAllFilms: 'Все фильмы',
     },
     filmItem: {
       year: 'Год выхода:',
