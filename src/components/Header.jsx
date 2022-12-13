@@ -11,8 +11,9 @@ import {
 } from '../store/filmsSlice';
 import { selectFetchStatus, selectQueryParams } from '../store/selectors';
 
-import MounthSelector from './select/MounthSelector';
-import YearSelector from './select/YearSelector';
+// import MounthSelector from './select/MounthSelector';
+// import YearSelector from './select/YearSelector';
+import SelectComponent from './select/SelectComponent';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -39,8 +40,10 @@ const Header = () => {
         <h2 className="text-primary">{i18n.t('ui.title')}</h2>
       </div>
       <div className="d-flex w-50 m-auto mt-5">
-        <MounthSelector />
-        <YearSelector />
+        {/* <MounthSelector />
+        <YearSelector /> */ }
+        <SelectComponent type="month" />
+        <SelectComponent type="year" />
         <button
           onClick={fetchFilmsHandler}
           className={loadButtonClassName}
