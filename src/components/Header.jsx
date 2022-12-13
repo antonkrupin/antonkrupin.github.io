@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
-import MounthSelector from './selectors/MounthSelector';
-import YearSelector from './selectors/YearSelector';
-
 import routes, { headers } from '../routes';
 import { fetchFilms, clearFilmsList } from '../store/filmsSlice';
+
+import MounthSelector from './selectors/MounthSelector';
+import YearSelector from './selectors/YearSelector';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,15 @@ const Header = () => {
 
   const params = useSelector((state) => state.films.params);
 
+  const [error, setError] = useState(null);
+
   const fetchFilmsHandler = () => {
     const { year, month } = params;
     if (!year || !month) {
-      console.log('bad');
+      setError(i18n.t('ui.fetchFilmsError'));
     } else {
       dispatch(clearFilmsList());
+      setError(null);
       const requestOptions = [routes.premiersPath(),
         {
           headers,
@@ -54,6 +57,11 @@ const Header = () => {
         <span className="text-primary">{i18n.t('ui.loading')}</span>
       </div>
       ) }
+
+      {status === null && (
+      <div className="d-flex justify-content-center">{i18n.t('ui.noFilmsTitle')}</div>
+      )}
+      <div className="d-flex justify-content-center text-danger">{error}</div>
     </>
   );
 };
