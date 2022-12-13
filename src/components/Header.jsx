@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
 import routes, { headers } from '../routes';
-import { fetchFilms, clearFilmsList } from '../store/filmsSlice';
+import {
+  fetchFilms,
+  clearFilmsList,
+  setFilter,
+} from '../store/filmsSlice';
 
 import MounthSelector from './selectors/MounthSelector';
 import YearSelector from './selectors/YearSelector';
@@ -16,22 +20,16 @@ const Header = () => {
 
   const params = useSelector((state) => state.films.params);
 
-  const [error, setError] = useState(null);
+  const loadButtonClassName = (!params.year || !params.month) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
   const fetchFilmsHandler = () => {
-    const { year, month } = params;
-    if (!year || !month) {
-      setError(i18n.t('ui.fetchFilmsError'));
-    } else {
-      dispatch(clearFilmsList());
-      setError(null);
-      const requestOptions = [routes.premiersPath(),
-        {
-          headers,
-          params,
-        }];
-      dispatch(fetchFilms(requestOptions));
-    }
+    dispatch(clearFilmsList());
+    const requestOptions = [routes.premiersPath(),
+      {
+        headers,
+        params,
+      }];
+    dispatch(fetchFilms(requestOptions));
   };
 
   return (
@@ -44,10 +42,17 @@ const Header = () => {
         <YearSelector />
         <button
           onClick={fetchFilmsHandler}
-          className="btn btn-outline-primary m-2"
+          className={loadButtonClassName}
           type="button"
         >
           {i18n.t('ui.buttonLoad')}
+        </button>
+        <button
+          onClick={() => dispatch(setFilter())}
+          className={loadButtonClassName}
+          type="button"
+        >
+          {i18n.t('ui.filterLikeFilms')}
         </button>
       </div>
       { status === 'loading'
@@ -61,7 +66,6 @@ const Header = () => {
       {status === null && (
       <div className="d-flex justify-content-center">{i18n.t('ui.noFilmsTitle')}</div>
       )}
-      <div className="d-flex justify-content-center text-danger">{error}</div>
     </>
   );
 };

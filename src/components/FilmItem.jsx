@@ -12,7 +12,7 @@ const FilmItem = (props) => {
 
   const { film } = props;
 
-  const likeFillColor = film.like ? '#e52555' : '#0d090a';
+  const likeIconFillColor = film.like ? '#e52555' : '#0d090a';
 
   const deleteHandler = () => {
     dispatch(deleteFilm(film.kinopoiskId));
@@ -59,7 +59,7 @@ const FilmItem = (props) => {
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"
-        fill={likeFillColor}
+        fill={likeIconFillColor}
         viewBox="0 0 16 16"
       >
         <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
