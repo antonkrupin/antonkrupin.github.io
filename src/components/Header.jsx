@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
+import InfoBlock from './InfoBlock';
+
 import routes, { headers } from '../routes';
 import {
   fetchFilms,
@@ -20,7 +22,9 @@ const Header = () => {
 
   const params = useSelector(selectQueryParams);
 
-  const loadButtonClassName = ((!params.year || !params.month) || status === 'resolved') ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
+  const loadButtonClassName = ((!params.year || !params.month) || (status === 'resolved' || status === 'loading')) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
+
+  const filterButtonClassName = status !== 'resolved' ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
   const fetchFilmsHandler = () => {
     dispatch(clearFilmsList());
@@ -38,8 +42,6 @@ const Header = () => {
         <h2 className="text-primary">{i18n.t('ui.title')}</h2>
       </div>
       <div className="d-flex w-50 m-auto mt-5">
-        {/* <MounthSelector />
-        <YearSelector /> */ }
         <SelectComponent type="month" />
         <SelectComponent type="year" />
         <button
@@ -51,23 +53,13 @@ const Header = () => {
         </button>
         <button
           onClick={() => dispatch(setFilter())}
-          className={loadButtonClassName}
+          className={filterButtonClassName}
           type="button"
         >
           {i18n.t('ui.filterLikeFilms')}
         </button>
       </div>
-      { status === 'loading'
-      && (
-      <div className="d-flex align-items-center justify-content-center">
-        <span className="spinner-border text-primary mr-5" role="status" aria-hidden="true" />
-        <span className="text-primary">{i18n.t('ui.loading')}</span>
-      </div>
-      ) }
-
-      {status === null && (
-      <div className="d-flex justify-content-center">{i18n.t('ui.noFilmsTitle')}</div>
-      )}
+      <InfoBlock />
     </>
   );
 };
