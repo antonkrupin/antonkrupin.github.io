@@ -5,6 +5,7 @@ This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.t
 ## To start use application:
 
 Reg on [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/) to get individual 'X-API-KEY'.
+By default you can use my own 'X-API-KEY'.
 
 Clone repository to your PC, then run: 
 
