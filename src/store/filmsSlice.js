@@ -3,15 +3,9 @@ import axios from 'axios';
 
 export const fetchFilms = createAsyncThunk(
   'films/fetchFilms',
-  async (_, { rejectWithValue }) => {
+  async (requestOptions, { rejectWithValue }) => {
     try {
-      const response = await axios.get('https://kinopoiskapiunofficial.tech/api/v2.2/films/premieres', {
-        headers: {
-          'X-API-KEY': '72c61891-4272-4d36-8bc2-94c6a4d5a01e',
-          'Content-Type': 'application/json',
-        },
-        params: { year: '2021', month: 'FEBRUARY' },
-      });
+      const response = await axios.get(requestOptions[0], requestOptions[1]);
       return response.data.items;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -25,6 +19,10 @@ const filmsSlice = createSlice({
     films: [],
     fetchStatus: null,
     error: null,
+    params: {
+      year: null,
+      month: null,
+    },
   },
   reducers: {
     deleteFilm: (state, action) => {
@@ -40,6 +38,13 @@ const filmsSlice = createSlice({
           film.like = !film.like;
         }
       });
+    },
+    setSearchParams: (state, action) => {
+      const { paramName, value } = action.payload;
+      state.params[paramName] = value;
+    },
+    clearFilmsList: (state) => {
+      state.films = [];
     },
   },
   extraReducers: {
@@ -61,18 +66,8 @@ const filmsSlice = createSlice({
 export const {
   likeFilm,
   deleteFilm,
+  setSearchParams,
+  clearFilmsList,
 } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
-
-/*
-
-fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/301', {
-    method: 'GET',
-    headers: {
-        'X-API-KEY': '72c61891-4272-4d36-8bc2-94c6a4d5a01e',
-        'Content-Type': 'application/json',
-    },
-})
-
-*/
