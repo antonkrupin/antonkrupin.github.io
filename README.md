@@ -20,3 +20,5 @@ find routes.js in src folder of project and paste your individual 'X-API-KEY' in
 to start application on localhost:3000
 
 You can get films premiers by choosing mounth and year.
+
+Deployed application - antonkrupingithubio-production.up.railway.app
