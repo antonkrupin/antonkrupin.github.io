@@ -14,9 +14,9 @@ export default {
       duration: 'Продолжительность:',
       minutes: ' мин',
     },
-    mounthSelector: {
+    monthSelector: {
       default: 'Выберите месяц',
-      mounth: {
+      month: {
         january: 'Январь',
         february: 'Февраль',
         march: 'Март',
