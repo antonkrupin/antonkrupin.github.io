@@ -1,6 +1,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3a6aaf6ecbae5678d3d1/maintainability)](https://codeclimate.com/github/antonkrupin/antonkrupin.github.io/maintainability)
 # Application for fethcing films premiers on kinopoisk.ru
 
+In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
+
 This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
 
 ## To start use application:
@@ -23,5 +25,3 @@ to start application on localhost:3000
 You can get films premiers by choosing mounth and year.
 
 Deployed application - [antonkrupingithubio-production.up.railway.app](https://antonkrupingithubio-production.up.railway.app/)
-
-In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
