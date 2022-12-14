@@ -3,6 +3,11 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
+import {
+  loadButtonClassName,
+  filterButtonClassName,
+} from '../asserts/classNames';
+
 import InfoBlock from './InfoBlock';
 
 import routes, { headers } from '../routes';
@@ -14,7 +19,7 @@ import {
   setTopCoord,
 } from '../store/filmsSlice';
 
-import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
+import { selectQueryParams, selectActiveFilter } from '../store/selectors';
 
 import SelectComponent from './SelectComponent';
 
@@ -23,15 +28,17 @@ import '../style/Header.css';
 const Header = () => {
   const dispatch = useDispatch();
 
-  const status = useSelector(selectFetchStatus);
+  // const status = useSelector(selectFetchStatus);
 
   const params = useSelector(selectQueryParams);
 
   const filter = useSelector(selectActiveFilter);
 
-  const loadButtonClassName = ((!params.year || !params.month) || (status === 'resolved' || status === 'loading')) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
+  // eslint-disable-next-line max-len
+  // const loadButtonClassName = ((!params.year || !params.month) || (status === 'resolved' || status === 'loading')) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
-  const filterButtonClassName = status !== 'resolved' ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
+  // eslint-disable-next-line max-len
+  // const filterButtonClassName = status !== 'resolved' ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
   const fetchFilmsHandler = () => {
     dispatch(clearFilmsList());
@@ -63,14 +70,14 @@ const Header = () => {
           <SelectComponent type="year" />
           <button
             onClick={fetchFilmsHandler}
-            className={loadButtonClassName}
+            className={loadButtonClassName()}
             type="button"
           >
             {i18n.t('ui.buttonLoad')}
           </button>
           <button
             onClick={scrollHandler}
-            className={filterButtonClassName}
+            className={filterButtonClassName()}
             type="button"
           >
             {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
