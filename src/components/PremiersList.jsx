@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import i18n from '../asserts/i18next';
@@ -8,6 +8,12 @@ import { selectFilmsByFilter } from '../store/selectors';
 import FilmItem from './FilmItem';
 
 const PremiersList = () => {
+  const coord = useSelector((state) => state.films.topCoord);
+
+  useEffect(() => {
+    window.scrollTo(0, coord);
+  });
+
   const films = useSelector(selectFilmsByFilter);
 
   return (
