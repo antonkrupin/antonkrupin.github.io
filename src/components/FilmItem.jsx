@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
 import { LikeIcon, TrashIcon } from './Icons';
 
-import { deleteFilm, likeFilm } from '../store/filmsSlice';
+import { deleteFilm, likeFilm, setTopCoord } from '../store/filmsSlice';
 
 import '../style/FilmItem.css';
 
 const FilmItem = (props) => {
   const dispatch = useDispatch();
+
+  const ref = useRef();
 
   const { film } = props;
 
@@ -18,20 +20,24 @@ const FilmItem = (props) => {
 
   const deleteHandler = () => {
     dispatch(deleteFilm(film.kinopoiskId));
+    dispatch(setTopCoord(window.pageYOffset));
   };
 
   const likeHandler = (e) => {
     if (e.target.classList.contains('bi-heart-fill') || e.target.parentNode.classList.contains('bi-heart-fill')) {
       dispatch(likeFilm(film.kinopoiskId));
+      dispatch(setTopCoord(window.pageYOffset));
     }
   };
 
   const onKeyDown = (e) => {
     if (e.key === 'Delete') {
       dispatch(deleteFilm(film.kinopoiskId));
+      dispatch(setTopCoord(window.pageYOffset));
     }
     if (e.key === 'Enter') {
       dispatch(likeFilm(film.kinopoiskId));
+      dispatch(setTopCoord(window.pageYOffset));
     }
   };
 
@@ -41,6 +47,7 @@ const FilmItem = (props) => {
       onClick={(e) => likeHandler(e)}
       onKeyDown={(e) => onKeyDown(e)}
       id={film.kinopoiskId}
+      ref={ref}
       className="d-flex flex-column justify-content-end align-items-center filmItem"
     >
       <div>
