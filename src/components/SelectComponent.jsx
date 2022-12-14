@@ -1,13 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import i18n from '../asserts/i18next';
+
+import { selectFetchStatus } from '../store/selectors';
 
 import { setFetchStatus, setSearchParams } from '../store/filmsSlice';
 
 const SelectComponent = (props) => {
   const dispatch = useDispatch();
   const { type } = props;
+  const status = useSelector(selectFetchStatus);
+  const disabled = status === 'loading';
 
   const selectHandler = (e) => {
     dispatch(setFetchStatus('changeFilters'));
@@ -18,6 +22,7 @@ const SelectComponent = (props) => {
     case 'year': {
       return (
         <select
+          disabled={disabled}
           onChange={(e) => selectHandler(e)}
           className="form-select m-2"
           aria-label={i18n.t('yearSelector.ariaLabel')}
@@ -41,6 +46,7 @@ const SelectComponent = (props) => {
     case 'month': {
       return (
         <select
+          disabled={disabled}
           onChange={(e) => selectHandler(e)}
           className="form-select m-2"
           aria-label={i18n.t('monthSelector.ariaLabel')}
