@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
@@ -12,8 +12,6 @@ import '../style/FilmItem.css';
 const FilmItem = (props) => {
   const dispatch = useDispatch();
 
-  const ref = useRef();
-
   const { film } = props;
 
   const likeIconFillColor = film.like ? '#e52555' : '#0d090a';
@@ -24,7 +22,8 @@ const FilmItem = (props) => {
   };
 
   const likeHandler = (e) => {
-    if (e.target.classList.contains('bi-heart-fill') || e.target.parentNode.classList.contains('bi-heart-fill')) {
+    if (e.target.classList.contains('bi-heart-fill')
+         || e.target.parentNode.classList.contains('bi-heart-fill')) {
       dispatch(likeFilm(film.kinopoiskId));
       dispatch(setTopCoord(window.pageYOffset));
     }
@@ -47,7 +46,6 @@ const FilmItem = (props) => {
       onClick={(e) => likeHandler(e)}
       onKeyDown={(e) => onKeyDown(e)}
       id={film.kinopoiskId}
-      ref={ref}
       className="d-flex flex-column justify-content-end align-items-center filmItem"
     >
       <div>
