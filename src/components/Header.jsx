@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
@@ -6,11 +6,14 @@ import i18n from '../asserts/i18next';
 import InfoBlock from './InfoBlock';
 
 import routes, { headers } from '../routes';
+
 import {
   fetchFilms,
   clearFilmsList,
   setFilter,
+  setTopCoord,
 } from '../store/filmsSlice';
+
 import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
 
 import SelectComponent from './SelectComponent';
@@ -19,6 +22,8 @@ import '../style/Header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
+
+  const buttonRef = useRef();
 
   const status = useSelector(selectFetchStatus);
 
@@ -40,6 +45,15 @@ const Header = () => {
     dispatch(fetchFilms(requestOptions));
   };
 
+  const scrollHandler = () => {
+    if (filter) {
+      dispatch(setFilter());
+    } else {
+      dispatch(setTopCoord(window.pageYOffset));
+      dispatch(setFilter());
+    }
+  };
+
   return (
     <>
       <div className="d-flex bg-warning p-2 text-center justify-content-center flex-column">
@@ -57,9 +71,10 @@ const Header = () => {
             {i18n.t('ui.buttonLoad')}
           </button>
           <button
-            onClick={() => dispatch(setFilter())}
+            onClick={scrollHandler}
             className={filterButtonClassName}
             type="button"
+            ref={buttonRef}
           >
             {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
           </button>
