@@ -42,26 +42,28 @@ const Header = () => {
 
   return (
     <>
-      <div className="d-flex text-center justify-content-center flex-column">
+      <div className="d-flex bg-warning p-2 text-center justify-content-center flex-column">
         <h2 className="text-primary">{i18n.t('ui.title')}</h2>
       </div>
-      <div className="filters m-auto mt-5">
-        <SelectComponent type="month" />
-        <SelectComponent type="year" />
-        <button
-          onClick={fetchFilmsHandler}
-          className={loadButtonClassName}
-          type="button"
-        >
-          {i18n.t('ui.buttonLoad')}
-        </button>
-        <button
-          onClick={() => dispatch(setFilter())}
-          className={filterButtonClassName}
-          type="button"
-        >
-          {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
-        </button>
+      <div className="filters-container m-auto mt-5">
+        <div className="filters">
+          <SelectComponent type="month" />
+          <SelectComponent type="year" />
+          <button
+            onClick={fetchFilmsHandler}
+            className={loadButtonClassName}
+            type="button"
+          >
+            {i18n.t('ui.buttonLoad')}
+          </button>
+          <button
+            onClick={() => dispatch(setFilter())}
+            className={filterButtonClassName}
+            type="button"
+          >
+            {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
+          </button>
+        </div>
       </div>
       <InfoBlock />
     </>
