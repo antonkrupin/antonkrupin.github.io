@@ -23,3 +23,5 @@ to start application on localhost:3000
 You can get films premiers by choosing mounth and year.
 
 Deployed application - [antonkrupingithubio-production.up.railway.app](https://antonkrupingithubio-production.up.railway.app/)
+
+In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
