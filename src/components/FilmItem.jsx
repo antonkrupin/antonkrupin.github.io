@@ -14,8 +14,6 @@ const FilmItem = (props) => {
 
   const { film } = props;
 
-  const likeIconFillColor = film.like ? '#e52555' : '#0d090a';
-
   const deleteHandler = () => {
     dispatch(deleteFilm(film.kinopoiskId));
     dispatch(setTopCoord(window.pageYOffset));
@@ -39,6 +37,8 @@ const FilmItem = (props) => {
       dispatch(setTopCoord(window.pageYOffset));
     }
   };
+
+  const likeIconFillColor = film.like ? '#e52555' : '#0d090a';
 
   return (
     <button

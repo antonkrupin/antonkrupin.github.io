@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
@@ -22,8 +22,6 @@ import '../style/Header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
-
-  const buttonRef = useRef();
 
   const status = useSelector(selectFetchStatus);
 
@@ -74,7 +72,6 @@ const Header = () => {
             onClick={scrollHandler}
             className={filterButtonClassName}
             type="button"
-            ref={buttonRef}
           >
             {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
           </button>

@@ -8,6 +8,7 @@ export const fetchFilms = createAsyncThunk(
       const response = await axios.get(requestOptions[0], requestOptions[1]);
       return response.data.items;
     } catch (error) {
+      console.log(error);
       return rejectWithValue(error.message);
     }
   },
