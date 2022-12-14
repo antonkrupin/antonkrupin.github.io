@@ -1,9 +1,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3a6aaf6ecbae5678d3d1/maintainability)](https://codeclimate.com/github/antonkrupin/antonkrupin.github.io/maintainability)
 # Application for fethcing films premiers on kinopoisk.ru
 
-In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
-
 This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
+
+In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
 
 ## To start use application:
 
