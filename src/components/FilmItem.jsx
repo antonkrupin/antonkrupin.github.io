@@ -24,8 +24,17 @@ const FilmItem = (props) => {
     dispatch(likeFilm(film.kinopoiskId));
   };
 
+  const onKeyDown = (e) => {
+    if (e.key === 'Delete') {
+      dispatch(deleteFilm(film.kinopoiskId));
+    }
+  };
+
   return (
-    <div
+    <button
+      type="button"
+      onClick={likeHandler}
+      onKeyDown={(e) => onKeyDown(e)}
       id={film.kinopoiskId}
       className="d-flex flex-column justify-content-end align-items-center filmItem"
     >
@@ -55,10 +64,10 @@ const FilmItem = (props) => {
           {i18n.t('filmItem.minutes')}
         </h6>
       </div>
-      <LikeIcon onClick={likeHandler} fill={likeIconFillColor} />
+      <LikeIcon fill={likeIconFillColor} />
       <img src={film.posterUrlPreview} alt={film.nameRu} />
       <TrashIcon onClick={deleteHandler} />
-    </div>
+    </button>
   );
 };
 
