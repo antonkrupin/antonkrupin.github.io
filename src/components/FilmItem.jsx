@@ -20,20 +20,25 @@ const FilmItem = (props) => {
     dispatch(deleteFilm(film.kinopoiskId));
   };
 
-  const likeHandler = () => {
-    dispatch(likeFilm(film.kinopoiskId));
+  const likeHandler = (e) => {
+    if (e.target.classList.contains('bi-heart-fill') || e.target.parentNode.classList.contains('bi-heart-fill')) {
+      dispatch(likeFilm(film.kinopoiskId));
+    }
   };
 
   const onKeyDown = (e) => {
     if (e.key === 'Delete') {
       dispatch(deleteFilm(film.kinopoiskId));
     }
+    if (e.key === 'Enter') {
+      dispatch(likeFilm(film.kinopoiskId));
+    }
   };
 
   return (
     <button
       type="button"
-      onClick={likeHandler}
+      onClick={(e) => likeHandler(e)}
       onKeyDown={(e) => onKeyDown(e)}
       id={film.kinopoiskId}
       className="d-flex flex-column justify-content-end align-items-center filmItem"
