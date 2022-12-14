@@ -9,8 +9,11 @@ import { setFetchStatus, setSearchParams } from '../store/filmsSlice';
 
 const SelectComponent = (props) => {
   const dispatch = useDispatch();
+
   const { type } = props;
+
   const status = useSelector(selectFetchStatus);
+
   const disabled = status === 'loading';
 
   const selectHandler = (e) => {
