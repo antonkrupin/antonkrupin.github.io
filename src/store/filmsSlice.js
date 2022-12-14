@@ -24,6 +24,7 @@ const filmsSlice = createSlice({
       month: null,
     },
     filter: false,
+    topCoord: null,
   },
   reducers: {
     deleteFilm: (state, action) => {
@@ -53,6 +54,9 @@ const filmsSlice = createSlice({
     setFetchStatus: (state, action) => {
       state.fetchStatus = action.payload;
     },
+    setTopCoord: (state, action) => {
+      state.topCoord = action.payload;
+    },
   },
   extraReducers: {
     [fetchFilms.pending]: (state) => {
@@ -77,6 +81,7 @@ export const {
   clearFilmsList,
   setFilter,
   setFetchStatus,
+  setTopCoord,
 } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
