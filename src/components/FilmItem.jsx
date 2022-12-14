@@ -30,12 +30,11 @@ const FilmItem = (props) => {
   const onKeyDown = (e) => {
     if (e.key === 'Delete') {
       dispatch(deleteFilm(film.kinopoiskId));
-      dispatch(setTopCoord(window.pageYOffset));
     }
     if (e.key === 'Enter') {
       dispatch(likeFilm(film.kinopoiskId));
-      dispatch(setTopCoord(window.pageYOffset));
     }
+    dispatch(setTopCoord(window.pageYOffset));
   };
 
   const likeIconFillColor = film.like ? '#e52555' : '#0d090a';

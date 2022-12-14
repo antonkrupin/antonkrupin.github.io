@@ -24,4 +24,4 @@ to start application on localhost:3000
 
 You can get films premiers by choosing mounth and year.
 
-Deployed application - [antonkrupingithubio-production.up.railway.app](https://antonkrupingithubio-production.up.railway.app/)
+Deployed application - [antonkrupin-github-io.vercel.app](https://antonkrupin-github-io.vercel.app/)
