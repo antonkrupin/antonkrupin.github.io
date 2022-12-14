@@ -18,7 +18,9 @@ const InfoBlock = () => {
     }
     case null: {
       return (
-        <div className="d-flex justify-content-center">{i18n.t('ui.noFilmsTitle')}</div>
+        <div className="d-flex justify-content-center">
+          <h4 className="text-info">{i18n.t('ui.noFilmsTitle')}</h4>
+        </div>
       );
     }
     default: {

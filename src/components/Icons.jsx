@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const LikeIcon = (props) => {
-  const { onClick, fill } = props;
+  const { fill } = props;
   return (
     <svg
-      onClick={onClick}
       className="bi bi-heart-fill"
       xmlns="http://www.w3.org/2000/svg"
       width="32"

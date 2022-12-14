@@ -12,7 +12,7 @@ const PremiersList = () => {
 
   return (
     <div className="d-flex flex-wrap justify-content-center">
-      {films.length === 0 && <div>{i18n.t('ui.emptyList')}</div>}
+      {films.length === 0 && <div><h5 className="text-danger">{i18n.t('ui.emptyList')}</h5></div>}
       {films.map((film) => (
         <FilmItem
           key={film.kinopoiskId}
