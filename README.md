@@ -14,7 +14,7 @@ Clone repository to your PC, then run:
 
 ### `npm install`
 
-to install applications with all dependencys
+to install application with all dependencys
 
 find routes.js in src folder of project and paste your individual 'X-API-KEY' in const headers.
 
