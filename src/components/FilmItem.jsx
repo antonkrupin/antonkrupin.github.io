@@ -50,16 +50,6 @@ const FilmItem = (props) => {
       <div>
         <h4 className="text-break text-center">
           {film.nameRu}
-          {film.nameEn && (
-          <>
-            <br />
-            <span>
-              (
-              {film.nameEn}
-              )
-            </span>
-          </>
-          )}
         </h4>
         <h6>
           {i18n.t('filmItem.year')}
