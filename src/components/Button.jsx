@@ -30,6 +30,7 @@ const Button = (props) => {
         params,
       }];
     dispatch(fetchFilms(requestOptions));
+    dispatch(setTopCoord(null));
   };
 
   const scrollHandler = () => {
@@ -60,7 +61,7 @@ const Button = (props) => {
           className={filterButtonClassName()}
           type="button"
         >
-          {filter === 'all' ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
+          {filter === 'all' ? i18n.t('ui.filterLikeFilms') : i18n.t('ui.filterAllFilms')}
         </button>
       );
     }
