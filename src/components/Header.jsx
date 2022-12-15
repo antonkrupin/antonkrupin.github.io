@@ -4,7 +4,8 @@ import React from 'react';
 import i18n from '../asserts/i18next';
 import Button from './Button';
 import InfoBlock from './InfoBlock';
-import SelectComponent from './SelectComponent';
+import { YearSelector, MonthSelector } from './SelectComponent';
+// import SelectComponent from './SelectComponent';
 // import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
 import '../style/Header.css';
 
@@ -22,8 +23,8 @@ const Header = (props) => {
       </div>
       <div className="filters-container m-auto mt-5">
         <div className="filters">
-          <SelectComponent type="month" status={status} />
-          <SelectComponent type="year" status={status} />
+          <MonthSelector status={status} />
+          <YearSelector status={status} />
           <Button
             type="load"
             filter={filter}
