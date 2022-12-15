@@ -1,19 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 import Button from './Button';
 import InfoBlock from './InfoBlock';
 import SelectComponent from './SelectComponent';
-import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
+// import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
 import '../style/Header.css';
 
-const Header = () => {
-  const status = useSelector(selectFetchStatus);
+const Header = (props) => {
+  const { status, params, filter } = props;
+  /* const status = useSelector(selectFetchStatus);
 
   const params = useSelector(selectQueryParams);
 
-  const filter = useSelector(selectActiveFilter);
+  const filter = useSelector(selectActiveFilter); */
   return (
     <>
       <div className="d-flex bg-warning p-2 text-center justify-content-center flex-column">
