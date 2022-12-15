@@ -8,12 +8,12 @@ import { selectFilmsByFilter } from '../store/selectors';
 import FilmItem from './FilmItem';
 
 const PremiersList = () => {
-  const coord = useSelector((state) => state.films.topCoord);
+  const distanceFromTop = useSelector((state) => state.films.topCoord);
 
   const films = useSelector(selectFilmsByFilter);
 
   useEffect(() => {
-    window.scrollTo(0, coord);
+    window.scrollTo(0, distanceFromTop);
   });
 
   return (
