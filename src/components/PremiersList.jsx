@@ -10,11 +10,11 @@ import FilmItem from './FilmItem';
 const PremiersList = () => {
   const coord = useSelector((state) => state.films.topCoord);
 
+  const films = useSelector(selectFilmsByFilter);
+
   useEffect(() => {
     window.scrollTo(0, coord);
   });
-
-  const films = useSelector(selectFilmsByFilter);
 
   return (
     <div className="d-flex flex-wrap justify-content-center">

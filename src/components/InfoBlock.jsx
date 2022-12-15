@@ -1,11 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import i18n from '../asserts/i18next';
-import { selectFetchStatus } from '../store/selectors';
 
-const InfoBlock = () => {
-  const status = useSelector(selectFetchStatus);
+const InfoBlock = (props) => {
+  const { status } = props;
 
   switch (status) {
     case 'loading': {

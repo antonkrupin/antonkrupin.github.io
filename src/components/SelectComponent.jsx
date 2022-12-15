@@ -1,18 +1,14 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
-
-import { selectFetchStatus } from '../store/selectors';
 
 import { setFetchStatus, setSearchParams } from '../store/filmsSlice';
 
 const SelectComponent = (props) => {
   const dispatch = useDispatch();
 
-  const { type } = props;
-
-  const status = useSelector(selectFetchStatus);
+  const { type, status } = props;
 
   const disabled = status === 'loading';
 

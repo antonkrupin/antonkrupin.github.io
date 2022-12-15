@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
@@ -17,16 +17,10 @@ import {
   setTopCoord,
 } from '../store/filmsSlice';
 
-import { selectQueryParams, selectActiveFilter } from '../store/selectors';
-
 const Button = (props) => {
   const dispatch = useDispatch();
 
-  const { type } = props;
-
-  const params = useSelector(selectQueryParams);
-
-  const filter = useSelector(selectActiveFilter);
+  const { type, params, filter } = props;
 
   const loadFilmsHandler = () => {
     dispatch(clearFilmsList());
