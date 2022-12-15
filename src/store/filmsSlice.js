@@ -24,7 +24,7 @@ const filmsSlice = createSlice({
       year: null,
       month: null,
     },
-    filter: false,
+    filter: 'all',
     topCoord: null,
   },
   reducers: {
@@ -49,8 +49,8 @@ const filmsSlice = createSlice({
     clearFilmsList: (state) => {
       state.films = [];
     },
-    setFilter: (state) => {
-      state.filter = !state.filter;
+    setFilter: (state, action) => {
+      state.filter = action.payload;
     },
     setFetchStatus: (state, action) => {
       state.fetchStatus = action.payload;

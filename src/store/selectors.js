@@ -11,7 +11,7 @@ export const selectQueryParams = (state) => state.films.params;
 export const selectFilmsByFilter = createSelector(
   [selectAllFilms, selectActiveFilter],
   (allFilms, activeFilter) => {
-    if (activeFilter) {
+    if (activeFilter === 'like') {
       return allFilms.filter((film) => film.like);
     }
     return allFilms;
