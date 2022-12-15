@@ -42,10 +42,10 @@ const FilmItem = (props) => {
   return (
     <button
       type="button"
-      onClick={(e) => likeHandler(e)}
-      onKeyDown={(e) => onKeyDown(e)}
       id={film.kinopoiskId}
       className="d-flex flex-column justify-content-end align-items-center filmItem"
+      onClick={(e) => likeHandler(e)}
+      onKeyDown={(e) => onKeyDown(e)}
     >
       <div>
         <h4 className="text-break text-center">
