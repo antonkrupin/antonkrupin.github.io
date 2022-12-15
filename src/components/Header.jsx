@@ -2,13 +2,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import i18n from '../asserts/i18next';
-
-import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
-
 import Button from './Button';
 import InfoBlock from './InfoBlock';
 import SelectComponent from './SelectComponent';
-
+import { selectFetchStatus, selectQueryParams, selectActiveFilter } from '../store/selectors';
 import '../style/Header.css';
 
 const Header = () => {
