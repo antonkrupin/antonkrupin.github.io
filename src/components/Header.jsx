@@ -1,44 +1,40 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable no-undef */
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux';
 
 import i18n from '../asserts/i18next';
 
-import {
+/* import {
   loadButtonClassName,
   filterButtonClassName,
-} from '../asserts/classNames';
+} from '../asserts/classNames'; */
 
-import InfoBlock from './InfoBlock';
+// import routes, { headers } from '../routes';
 
-import routes, { headers } from '../routes';
-
-import {
+/* import {
   fetchFilms,
   clearFilmsList,
   setFilter,
   setTopCoord,
 } from '../store/filmsSlice';
 
-import { selectQueryParams, selectActiveFilter } from '../store/selectors';
+import { selectQueryParams, selectActiveFilter } from '../store/selectors'; */
+
+import Button from './Button';
+
+import InfoBlock from './InfoBlock';
 
 import SelectComponent from './SelectComponent';
 
 import '../style/Header.css';
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  // const status = useSelector(selectFetchStatus);
+  /* const dispatch = useDispatch();
 
   const params = useSelector(selectQueryParams);
 
   const filter = useSelector(selectActiveFilter);
-
-  // eslint-disable-next-line max-len
-  // const loadButtonClassName = ((!params.year || !params.month) || (status === 'resolved' || status === 'loading')) ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
-
-  // eslint-disable-next-line max-len
-  // const filterButtonClassName = status !== 'resolved' ? 'btn btn-outline-primary m-2 disabled' : 'btn btn-outline-primary m-2';
 
   const fetchFilmsHandler = () => {
     dispatch(clearFilmsList());
@@ -57,7 +53,7 @@ const Header = () => {
       dispatch(setTopCoord(window.pageYOffset));
       dispatch(setFilter());
     }
-  };
+  }; */
 
   return (
     <>
@@ -68,7 +64,9 @@ const Header = () => {
         <div className="filters">
           <SelectComponent type="month" />
           <SelectComponent type="year" />
-          <button
+          <Button type="load" />
+          <Button type="filter" />
+          { /* <button
             onClick={fetchFilmsHandler}
             className={loadButtonClassName()}
             type="button"
@@ -81,7 +79,7 @@ const Header = () => {
             type="button"
           >
             {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
-          </button>
+  </button> */ }
         </div>
       </div>
       <InfoBlock />
