@@ -3,7 +3,7 @@
 
 This application use [Kinopoisk Api Unofficial](https://kinopoiskapiunofficial.tech/).
 
-In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can move through films list using "Tab" button, for "like" use "Enter" button, for delete use "Delete" button.
+In application you can load film premiers on kinopoisk.ru - for this choose month and year. When films are loaded you can like, delete, filter favourite films. Also you can "like" use "Enter" button, for delete use "Delete" button.
 
 ## To start use application:
 
