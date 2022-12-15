@@ -60,7 +60,7 @@ const Button = (props) => {
           className={filterButtonClassName()}
           type="button"
         >
-          {filter ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
+          {filter === 'all' ? i18n.t('ui.filterAllFilms') : i18n.t('ui.filterLikeFilms')}
         </button>
       );
     }
