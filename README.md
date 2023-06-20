@@ -25,3 +25,5 @@ to start application on localhost:3000
 You can get films premiers by choosing mounth and year.
 
 Deployed application - [antonkrupin-github-io.vercel.app](https://antonkrupin-github-io.vercel.app/)
+
+![Image alt](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/1.jpg)
