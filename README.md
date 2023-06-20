@@ -27,6 +27,8 @@ You can get films premiers by choosing mounth and year.
 Deployed application - [antonkrupin-github-io.vercel.app](https://antonkrupin-github-io.vercel.app/)
 
 Application start page
-![Image alt](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/1.jpg)
+![Application start page](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/1.jpg)
 After loading films
-![Image alt](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/2.jpg)
+![After loading films](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/2.jpg)
+Mark liked films
+![Mark liked films](https://github.com/antonkrupin/antonkrupin.github.io/raw/master/screenshots/3.jpg)
